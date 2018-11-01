@@ -37,12 +37,17 @@ class Monitor extends Component {
         this.setState({ totalPrice: 0, orders: [] });
     }
 
-    saveOrder(product) {
+    saveOrder() {
         const { totalPrice, orders } = this.state;
-        axios.post("http://localhost:3001/orders/", { orderedDate: new Date(), totalPrice, orders })
-            .then(res => {
-                this.setState({ totalPrice: 0, orders: [] });
-            })
+        if (orders.length > 0) {
+            axios.post("http://localhost:3001/orders/", { orderedDate: new Date(), totalPrice, orders })
+                .then(res => {
+                    this.setState({ totalPrice: 0, orders: [] });
+                })
+            alert("บันทึกรายการสำเร็จ")
+        } else {
+            alert("กรุณาเลือกรายการสินค้าก่อนกดปุ่มยืนยัน")
+        }
     }
 
     render() {
