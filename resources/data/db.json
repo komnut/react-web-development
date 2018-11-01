@@ -39,38 +39,6 @@
   ],
   "orders": [
     {
-      "orderedDate": "2018-10-31T16:43:48.909Z",
-      "totalPrice": 370,
-      "orders": [
-        {
-          "product": {
-            "id": 3,
-            "productName": "บิงซู",
-            "unitPrice": "250",
-            "thumbnail": "/images/product/3.jpg"
-          },
-          "quantity": 2
-        }
-      ],
-      "id": 1
-    },
-    {
-      "orderedDate": "2018-10-31T16:44:03.429Z",
-      "totalPrice": 210,
-      "orders": [
-        {
-          "product": {
-            "id": 1,
-            "productName": "สลัดผัก",
-            "unitPrice": "120",
-            "thumbnail": "/images/product/1.jpg"
-          },
-          "quantity": 2
-        }
-      ],
-      "id": 2
-    },
-    {
       "orderedDate": "2018-11-01T00:30:53.787Z",
       "totalPrice": 370,
       "orders": [
@@ -149,22 +117,6 @@
         }
       ],
       "id": 11
-    },
-    {
-      "orderedDate": "2018-11-01T06:03:42.965Z",
-      "totalPrice": 580,
-      "orders": [
-        {
-          "product": {
-            "id": 1,
-            "productName": "สลัดผัก",
-            "unitPrice": "120",
-            "thumbnail": "/images/product/1.jpg"
-          },
-          "quantity": 4
-        }
-      ],
-      "id": 12
     },
     {
       "orderedDate": "2018-11-01T06:04:10.461Z",
@@ -251,38 +203,6 @@
       "id": 15
     },
     {
-      "orderedDate": "2018-11-01T06:15:04.516Z",
-      "totalPrice": 240,
-      "orders": [
-        {
-          "product": {
-            "id": 4,
-            "productName": "เฟรนฟราย",
-            "unitPrice": "120",
-            "thumbnail": "/images/product/4.jpg"
-          },
-          "quantity": 2
-        }
-      ],
-      "id": 16
-    },
-    {
-      "orderedDate": "2018-11-01T06:16:23.099Z",
-      "totalPrice": 120,
-      "orders": [
-        {
-          "product": {
-            "id": 4,
-            "productName": "เฟรนฟราย",
-            "unitPrice": "120",
-            "thumbnail": "/images/product/4.jpg"
-          },
-          "quantity": 1
-        }
-      ],
-      "id": 17
-    },
-    {
       "orderedDate": "2018-11-01T06:16:27.869Z",
       "totalPrice": 580,
       "orders": [
@@ -324,28 +244,6 @@
         }
       ],
       "id": 18
-    },
-    {
-      "orderedDate": "2018-11-01T06:16:31.100Z",
-      "totalPrice": 0,
-      "orders": [],
-      "id": 19
-    },
-    {
-      "orderedDate": "2018-11-01T06:17:38.960Z",
-      "totalPrice": 120,
-      "orders": [
-        {
-          "product": {
-            "id": 4,
-            "productName": "เฟรนฟราย",
-            "unitPrice": "120",
-            "thumbnail": "/images/product/4.jpg"
-          },
-          "quantity": 1
-        }
-      ],
-      "id": 20
     }
   ]
 }

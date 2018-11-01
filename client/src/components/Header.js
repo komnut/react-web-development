@@ -10,7 +10,7 @@ class Header extends Component {
     this.timerID = setInterval(() => this.tick(), 1000);
   }
 
-  componentDidUpdate() {}
+  componentDidUpdate() { }
 
   componentWillUnmount() {
     clearInterval(this.timerID);
@@ -35,6 +35,17 @@ class Header extends Component {
             <h5 className="text-muted mt-4">
               {this.state.date.toLocaleTimeString()}
             </h5>
+            <h6 className="text-muted">
+              <ul className="list-inline">
+                <li className="list-inline-item"><a href="/">Home</a></li>
+                | {" "}
+                <li className="list-inline-item"><a href="/About">About</a></li>
+                | {" "}
+                <li className="list-inline-item"><a href="/Order">Order</a></li>
+                | {" "}
+                <li className="list-inline-item"><a href="/Product">Product</a></li>
+              </ul>
+            </h6>
           </div>
         </div>
         <hr />

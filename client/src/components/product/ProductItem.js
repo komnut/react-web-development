@@ -2,10 +2,6 @@ import React, { Component } from "react";
 
 class ProductItem extends Component {
 
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         const { productName, unitPrice, thumbnail } = this.props.product;
         return (
