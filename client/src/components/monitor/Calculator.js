@@ -15,6 +15,8 @@ class Calculator extends Component {
                 )
             })
         }
+
+        console.log(orders);
     }
 
     render() {
