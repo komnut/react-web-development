@@ -12,6 +12,21 @@ class ProductItem extends Component {
                 <button className="btn btn-block btn-secondary title" onClick={() => this.props.onAddOrder(this.props.product)} >
                     ซื้อ
                 </button>
+
+                <div className="row inline">
+                    <div className="col-md-12">
+                        <div className="text-left">
+                            <button className="btn btn-info title" >
+                                แก้ไข
+                            </button>
+                        </div>
+                        <div className="text-right">
+                            <button className="btn btn-danger title" >
+                                ลบ
+                            </button>
+                        </div>
+                    </div>
+                </div>
                 <hr />
             </div>
         )
