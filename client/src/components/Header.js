@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom"; 
 
 class Header extends Component {
   constructor(props) {
@@ -10,7 +11,7 @@ class Header extends Component {
     this.timerID = setInterval(() => this.tick(), 1000);
   }
 
-  componentDidUpdate() { }
+  componentDidUpdate() {}
 
   componentWillUnmount() {
     clearInterval(this.timerID);
@@ -32,20 +33,18 @@ class Header extends Component {
             </h1>
           </div>
           <div className="col-md-4 text-right">
-            <h5 className="text-muted mt-4">
-              {this.state.date.toLocaleTimeString()}
+            <h5 className="text-muted mt-2">
+                {this.state.date.toLocaleTimeString()}
             </h5>
-            <h6 className="text-muted">
-              <ul className="list-inline">
-                <li className="list-inline-item"><a href="/">Home</a></li>
-                | {" "}
-                <li className="list-inline-item"><a href="/About">About</a></li>
-                | {" "}
-                <li className="list-inline-item"><a href="/Order">Order</a></li>
-                | {" "}
-                <li className="list-inline-item"><a href="/Product">Product</a></li>
-              </ul>
-            </h6>
+            <ul className="list-inline">
+                <li className="list-inline-item title"><Link className="text-success" to="">หน้าหลัก</Link></li>
+                <li className="list-inline-item title">|</li>
+                <li className="list-inline-item title"><Link className="text-success" to="/orders">รายการสั่งซื้อ</Link></li>
+                <li className="list-inline-item title">|</li>
+                <li className="list-inline-item title"><Link className="text-success" to="/products">สินค้า</Link></li>
+                <li className="list-inline-item title">|</li>
+                <li className="list-inline-item title"><Link className="text-success" to="/about">เกี่ยวกับเรา</Link></li>
+            </ul>  
           </div>
         </div>
         <hr />
