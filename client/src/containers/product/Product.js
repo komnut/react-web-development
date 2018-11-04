@@ -2,58 +2,66 @@ import React, { Component } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import ProductList from "../../components/product/ProductList";
-import { withRouter } from 'react-router-dom';
-import axios from "axios";
-
+import { withRouter } from "react-router-dom";
+import { connect } from "react-redux";
+import { productsFetch, productsDelete } from "../../actions";
 
 class Product extends Component {
-	constructor(props) {
-		super(props);
-		this.state = { products: null };
-		this.delProduct = this.delProduct.bind(this);
-		this.editProduct = this.editProduct.bind(this);
-	}
+  constructor(props) {
+    super(props);
+    this.delProduct = this.delProduct.bind(this);
+    this.editProduct = this.editProduct.bind(this);
+  }
 
-	componentDidMount() {
-		axios.get("http://localhost:3001/products").then(response => {
-			this.setState({products  : response.data});
-		});
-	}
+  componentDidMount() {
+    this.props.productsFetch();
+  }
 
-	editProduct(product) {
-		this.props.history.push('products/edit/' + product.id);
-	}
+  editProduct(product) {
+    this.props.history.push("products/edit/" + product.id);
+  }
 
-	delProduct(product) {
-		axios.delete("http://localhost:3001/products/" + product.id).then(response => {
-			axios.get("http://localhost:3001/products").then(response => {
-				this.setState({products  : response.data});
-			});
-		});
-	}
+  delProduct(product) {
+    this.props.productsDelete(product.id);
+  }
 
-	render() {
-		return (
-			<div>
-				<Header />
-				<div className="container-fluid ">
-					<div className="row">
-						<div className="col-6">
-							<h1>สินค้า</h1>
-						</div>
-						<div className="col-6">
-							<button className="btn btn-success title float-right" onClick={() => this.props.history.push('products/add')}>เพิ่ม</button>
-						</div>
-					</div>
-					<ProductList products={this.state.products} 
-						onEditProduct={this.editProduct} 
-						onDelProduct={this.delProduct}  
-					/>
-				</div>
-				<Footer />
-			</div>
-		);
-	}
+  render() {
+    return (
+      <div>
+        <Header />
+        <div className="container-fluid ">
+          <div className="row">
+            <div className="col-6">
+              <h1>สินค้า</h1>
+            </div>
+            <div className="col-6">
+              <button
+                className="btn btn-success title float-right"
+                onClick={() => this.props.history.push("products/add")}
+              >
+                เพิ่ม
+              </button>
+            </div>
+          </div>
+          <ProductList
+            products={this.props.products}
+            onEditProduct={this.editProduct}
+            onDelProduct={this.delProduct}
+          />
+        </div>
+        <Footer />
+      </div>
+    );
+  }
 }
 
-export default withRouter(Product);
+function mapStateToProps({ products }) {
+  return { products };
+}
+
+export default withRouter(
+  connect(
+    mapStateToProps,
+    { productsFetch, productsDelete }
+  )(Product)
+);
