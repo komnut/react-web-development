@@ -43,11 +43,15 @@ class Product extends Component {
               </button>
             </div>
           </div>
-          <ProductList
-            products={this.props.products}
-            onEditProduct={this.editProduct}
-            onDelProduct={this.delProduct}
-          />
+
+          {this.props.products &&
+            Array.isArray(this.props.products) && (
+              <ProductList
+                products={this.props.products}
+                onEditProduct={this.editProduct}
+                onDelProduct={this.delProduct}
+              />
+            )}
         </div>
         <Footer />
       </div>

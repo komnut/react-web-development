@@ -5,10 +5,6 @@ import { connect } from "react-redux";
 import { ordersFetch, ordersDelete } from "../../actions";
 
 class Order extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   componentDidMount() {
     this.props.ordersFetch();
   }

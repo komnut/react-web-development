@@ -17,7 +17,11 @@ class Home extends Component {
     return (
       <div>
         <Header />
-        <Monitor products={this.props.products} />
+
+        {this.props.products &&
+          Array.isArray(this.props.products) && (
+            <Monitor products={this.props.products} />
+          )}
         <Footer company="Olanlab" email="olan@olanlab.com" />
       </div>
     );
@@ -25,6 +29,7 @@ class Home extends Component {
 }
 
 function mapStateToProps(state) {
+  console.log(state);
   return { products: state.products };
 }
 
